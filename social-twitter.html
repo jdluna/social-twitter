@@ -1,0 +1,121 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icons/communication-icons.html">
+<link rel="import" href="../social-media-icons/social-media-icons.html">
+
+<!--
+`social-twitter`
+Test Web Component Twitter
+
+@demo demo/index.html 
+-->
+
+<dom-module id="social-twitter">
+  <template>
+    <style>
+       :host {
+        display: block;
+      }
+      
+      .bg-social {
+        background-color: #00aced;
+        border: 1px solid #00aced;
+        color: white;
+      }
+      
+      .rounded {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+      }
+      
+      .mini-stat {
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      
+      .mini-stat-info {
+        font-size: 12px;
+        padding-top: 2px;
+      }
+      
+      .mini-stat-info span {
+        display: block;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 7px;
+      }
+      
+      .mini-stat-icon {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        line-height: 60px;
+        text-align: center;
+        font-size: 60px;
+        background: none repeat scroll 0% 0% #EEE;
+        border-radius: 100%;
+        float: left;
+        margin-right: 10px;
+        color: #FFF;
+      }
+    </style>
+    
+    <div class="mini-stat clearfix bg-social rounded">
+      <span class="mini-stat-icon">
+        <!--<iron-icon id="test" icon="communication:email"></iron-icon> -->
+        <social-media-icons icon="twitter" size="40"></social-media-icons>
+      </span>
+      <div class="mini-stat-info">
+        <span class="counter">[[likes]]</span> [[tittle]]
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'social-twitter',
+
+      //listeners: {
+      //  'action.tap': '_tap'
+      //},
+
+      properties: {
+        likes: {
+          type: String,
+          value: '0',
+        },
+        tittle: {
+          type: String,
+          value: 'Social Tittle',
+        },
+      },
+
+      created: function () {
+        console.log('======> CREATED');
+      },
+      ready: function () {
+        console.log('======> READY');
+      },
+      attached: function () {
+        console.log('======> ATTACHED');
+        //this.fire('testEvent');
+      },
+      test: function () {
+
+      },
+      _privado: function () {
+
+      },
+
+      /*
+      */
+     //_tap: function(){
+     //   console.log('Numero de Likes .. '+this.likes);
+     //   this.fire('Likes ', this.likes);
+     // },
+    });
+  </script>
+</dom-module>
